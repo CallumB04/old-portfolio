@@ -32,21 +32,99 @@ body {
 .dark-mode {
     background-image: linear-gradient(to top , var(--background-color1-1), var(--background-color1-2));
     color: var(--text-color1);
+    position: relative;
+    z-index: 1;
 }
 
 .light-mode {
     background-image: linear-gradient(to bottom , var(--background-color2-1), var(--background-color2-2));
     color: var(--text-color2);
+    position: relative;
+    z-index: 1;
 }
 
 .navbar {
     width: 100%;
-    height: 70px;
+    height: 60px;
+    position: absolute;
 }
 
 .home-section {
     width: 100%;
     height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+}
+
+.home-section-image-div {
+    width: max(23%, 200px);
+    aspect-ratio: 3/4;
+    position: relative;
+    z-index: 3;
+}
+
+.home-section-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+.home-section-image-div::after, .home-section-image-div::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--highlight-color);
+    border-radius: 13px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+    padding: 3px;
+}
+
+.home-section-image-div::before {
+    filter: blur(1.5rem);
+    opacity: 0.4;
+}
+
+.home-section-text-div {
+    
+}
+
+.home-section-text-div h1 {
+    font-size: max(4vw, 1.8rem);
+}
+
+.home-section-text-div h2 {
+    font-weight: 100;
+    text-align: right;
+    font-size: max(1.7vw, 1rem);
+    padding-top: 5px;
+}
+
+.home-section-socials-div {
+    padding-top: 15px;
+    display: flex;
+    justify-content: right;
+    column-gap: 15px;
+}
+
+.home-section-socials-div .socials {
+    color: var(--text-color1);
+    text-decoration: none;
+    font-size: max(1.7vw, 1rem);
+    position: relative;
+}
+
+.home-section-socials-div .socials:hover {
+    cursor: pointer;
 }
 
 .projects-section {
