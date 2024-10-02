@@ -107,10 +107,11 @@ body {
     text-align: right;
     font-size: max(1.7vw, 1rem);
     padding-top: 5px;
+    font-style: italic;
 }
 
 .home-section-socials-div {
-    padding-top: 15px;
+    padding-top: 25px;
     display: flex;
     justify-content: right;
     column-gap: 15px;
