@@ -75,23 +75,39 @@ body {
     z-index: 3;
 }
 
+@property --angle {
+    syntax : "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes home-image-spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
 .home-section-image-div::after, .home-section-image-div::before {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: var(--highlight-color);
+    background-image: conic-gradient(from var(--angle), transparent 25%, var(--highlight-color));
     border-radius: 13px;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     z-index: 2;
-    padding: 3px;
+    padding: 4px;
+    animation: 5s home-image-spin linear infinite;
 }
 
 .home-section-image-div::before {
     filter: blur(1.5rem);
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .home-section-text-div {
