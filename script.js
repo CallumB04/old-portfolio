@@ -1,6 +1,9 @@
 const navbarHome = document.getElementById("nav-home");
 const navbarAbout = document.getElementById("nav-about");
 const navbarProjects = document.getElementById("nav-projects");
+const homeSection = document.getElementById("home-section");
+const aboutSection = document.getElementById("about-section");
+const projectsSection = document.getElementById("projects-section");
 
 
 /* Highlighting currently open section of webpage on the navbar */
@@ -59,3 +62,37 @@ navbarProjects.addEventListener("mouseover", () => {
 navbarProjects.addEventListener("mouseout",
     () => navbarProjects.classList.remove("highlight")
 );
+
+
+/* Updating navbar if window is scrolled into new section */
+
+// checks if section is the most predominant on the viewport
+const isInFocus = (section) => {
+    if (section.getBoundingClientRect().y < window.innerHeight / 2) {
+        return true;
+    } return false;
+}
+
+// updates navbar with new focused section
+const updateNavbar = (section) => {
+    // clearing all navbar elements
+    navbarHome.classList.remove("selected");
+    navbarAbout.classList.remove("selected");
+    navbarProjects.classList.remove("selected");
+
+    section.classList.add("selected");
+}
+
+// checks current predominant section each time the page is scrolled
+window.addEventListener("scroll", () => {
+
+    for (const section of [
+        [homeSection, navbarHome], 
+        [aboutSection, navbarAbout], 
+        [projectsSection, navbarProjects]
+    ]) {
+        if (isInFocus(section[0])) { 
+            updateNavbar(section[1]); 
+        }
+    }
+});
