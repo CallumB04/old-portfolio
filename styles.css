@@ -169,6 +169,11 @@ body {
     opacity: 0.6;
 }
 
+.home-section-text-div {
+    position: relative;
+    padding-bottom: 10%;
+}
+
 .home-section-text-div h1 {
     font-size: max(4vw, 1.8rem);
 }
@@ -182,7 +187,7 @@ body {
 }
 
 .home-section-socials-div {
-    padding-top: 25px;
+    margin-top: 25px;
     display: flex;
     justify-content: right;
     column-gap: 15px;
@@ -197,6 +202,54 @@ body {
 
 .home-section-socials-div .socials:hover {
     cursor: pointer;
+}
+
+.home-section .cv-button {
+    margin-top: 15%; 
+    padding: 7px;
+    width: 40%;
+    height: 20%;
+
+    position: absolute;
+    right: 50%;
+    translate: 50% 0%;
+
+    background-color: transparent;
+    color: var(--text-color1);
+    border: 2px solid var(--highlight-color);
+    border-radius: 30px;
+}
+
+.home-section .cv-button::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    border: 5px solid var(--highlight-color);
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+.home-section .cv-button-text {
+    font-weight: bold;
+    font-size: calc(1.1vw + 3px);
+}
+
+.home-section .cv-button:hover {
+    cursor: pointer;
+    background-color: #474747c2;
+}
+
+@media (max-width: 869px) {
+    .home-section .cv-button {
+        height: 25%;
+    }
 }
 
 .section-split {
