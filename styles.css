@@ -90,6 +90,23 @@ body {
     animation: 0.5s fade-in-highlight;
 }
 
+@keyframes fade-in-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: 1.5s fade-in-animation ease-in;
+}
+
+.start-faded-out {
+    opacity: 0;
+}
+
 .home-section {
     width: 100%;
     height: 100vh;

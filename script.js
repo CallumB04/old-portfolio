@@ -73,6 +73,13 @@ const isInFocus = (section) => {
     } return false;
 }
 
+// checks if section is 15% visible on the viewport
+const isPartiallyVisible = (section) => {
+    if (section.getBoundingClientRect().y < window.innerHeight * 0.85) {
+        return true;
+    } return false;
+}
+
 // updates navbar with new focused section
 const updateNavbar = (section) => {
     // clearing all navbar elements
@@ -80,19 +87,36 @@ const updateNavbar = (section) => {
     navbarAbout.classList.remove("selected");
     navbarProjects.classList.remove("selected");
 
+    // update navbar
     section.classList.add("selected");
+}
+
+// when section is viewed for first time, fades in all elements of the section
+const fadeInChildren = (section) => {
+    
+    // Iterating through each child element of the section, adding animation
+    for (const child of section.children) {
+        child.classList.remove("start-faded-out");
+        child.classList.add("fade-in");
+    }
 }
 
 // checks current predominant section each time the page is scrolled
 window.addEventListener("scroll", () => {
 
+    // Iterating through 2D array of [<section>, <respective navbar element>]
     for (const section of [
         [homeSection, navbarHome], 
         [aboutSection, navbarAbout], 
         [projectsSection, navbarProjects]
     ]) {
+        // Checking if section is predominant on the viewport
         if (isInFocus(section[0])) { 
-            updateNavbar(section[1]); 
+            updateNavbar(section[1]); // Update highlights on navbar
+        }
+        // Fading in elements when section is partially visible
+        if (isPartiallyVisible(section[0])) {
+            fadeInChildren(section[0]); // Add animation to children of section
         }
     }
 });
