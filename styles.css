@@ -5,6 +5,7 @@
     --background-color1-2: #202020;
     --background-color2-1: #f3f3f3;
     --background-color2-2: #dfdfdf;
+    --background-color2-2-faded: #dfdfdf00;
     --text-color1: #f7f7f7;
     --text-color2: #1a1a1a;
     --highlight-color: #FFBA2F;
@@ -69,6 +70,15 @@ body {
     cursor: pointer;
 }
 
+@keyframes fade-in-highlight {
+    from {
+        background-color: var(--background-color2-2-faded);
+    }
+    to {
+        background-color: var(--background-color2-2);
+    }
+}
+
 .selected {
     background-color: var(--background-color2-1);
     border-radius: 12px;
@@ -77,8 +87,8 @@ body {
 .highlight {
     background-color: var(--background-color2-2);
     border-radius: 12px;
+    animation: 0.5s fade-in-highlight;
 }
-
 
 .home-section {
     width: 100%;
