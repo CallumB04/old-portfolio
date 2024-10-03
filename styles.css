@@ -177,6 +177,10 @@ body {
     top: -60px;
 }
 
+.about-section {
+    width: 100%;
+}
+
 .projects-section {
     width: 100%;
 }
