@@ -259,7 +259,21 @@ body {
 
 .about-section {
     width: 100%;
-    height: 1000px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.about-section .about-me-header {
+    font-size: calc(3vw + 5px);
+    margin-bottom: 15px;
+    color: var(--highlight-color);
+}
+
+.about-section .about-me-text {
+    font-size: calc(1vw + 6px);
+    line-height: 130%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .projects-section {
