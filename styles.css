@@ -99,8 +99,12 @@ body {
     }
 }
 
+.home-section-fade-in {
+    animation: 1.5s fade-in-animation ease-in
+}
+
 .fade-in {
-    animation: 1.5s fade-in-animation ease-in;
+    animation: 1s fade-in-animation linear;
 }
 
 .start-faded-out {
