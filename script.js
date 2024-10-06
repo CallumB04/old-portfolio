@@ -4,6 +4,7 @@ const navbarProjects = document.getElementById("nav-projects");
 const homeSection = document.getElementById("home-section");
 const aboutSection = document.getElementById("about-section");
 const projectsSection = document.getElementById("projects-section");
+const languages = document.getElementsByClassName("language");
 
 
 /* Highlighting currently open section of webpage on the navbar */
@@ -120,3 +121,18 @@ window.addEventListener("scroll", () => {
         }
     }
 });
+
+for (const language of languages) {
+    let hover = document.getElementById(`${language.id}-hover`);
+
+    language.addEventListener("mouseover", () => {
+        language.classList.add("colored");
+        language.style.backgroundColor = "black";
+        hover.style.display = "block";
+    });
+    language.addEventListener("mouseout", () => {
+        language.classList.remove("colored");
+        hover.style.display = "none";
+        language.style.backgroundColor = "transparent";
+    })
+}
