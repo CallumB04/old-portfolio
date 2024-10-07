@@ -117,7 +117,7 @@ window.addEventListener("scroll", () => {
             updateNavbar(section[1]); // Update highlights on navbar
         }
         // Fading in elements when section is partially visible
-        if (isPartiallyVisible(section[0])) {
+        if (isPartiallyVisible(section[0]) && section[0] != homeSection) {
             fadeInChildren(section[0]); // Add animation to children of section
         }
     }
