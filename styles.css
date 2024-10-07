@@ -292,7 +292,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 80%;
+    width: 50%;
     column-gap: 2vw;
     row-gap: 1vw;
 }
@@ -378,6 +378,6 @@ body {
         width: 90%;
     }
     .about-section .language-skill {
-        font-size: 7vw;
+        font-size: 9vw;
     }
 }
