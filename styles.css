@@ -171,6 +171,7 @@ body {
 
 .home-section-image-div::before {
     filter: blur(2.5rem);
+    transform: translate3d(0, 0, 0);
     opacity: 0.6;
 }
 
@@ -239,6 +240,7 @@ body {
     translate: -50% -50%;
     z-index: 2;
     filter: blur(1rem);
+    transform: translate3d(0, 0, 0);
     opacity: 0.5;
 }
 
