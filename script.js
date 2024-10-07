@@ -122,17 +122,16 @@ window.addEventListener("scroll", () => {
     }
 });
 
+// iterating through languages and adding hover checks for each
 for (const language of languages) {
     let hover = document.getElementById(`${language.id}-hover`);
 
     language.addEventListener("mouseover", () => {
         language.classList.add("colored");
-        language.style.backgroundColor = "black";
-        hover.style.display = "block";
+        hover.style.display = "flex";
     });
     language.addEventListener("mouseout", () => {
         language.classList.remove("colored");
         hover.style.display = "none";
-        language.style.backgroundColor = "transparent";
     })
 }
