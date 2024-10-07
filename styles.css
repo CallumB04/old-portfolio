@@ -280,7 +280,7 @@ body {
 .about-section .about-me-text {
     font-size: calc(1vw + 6px);
     line-height: 130%;
-    width: 80%;
+    width: 70ch;
     margin: 0 auto;
     margin-bottom: 4%;
 }
