@@ -263,7 +263,7 @@ body {
 
 .about-section {
     width: 100%;
-    padding: 60px 40px;
+    padding: 60px 40px 40px 40px;
     text-align: center;
 }
 
@@ -278,33 +278,33 @@ body {
     line-height: 130%;
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 6%;
+    margin-bottom: 4%;
 }
 
-.about-section .languages-div {
+.about-section .about-div {
     padding-top: 5px;
     margin: 0 auto 5% auto;
 
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 50%;
+    width: 80%;
     column-gap: 2vw;
     row-gap: 1vw;
 }
 
-.about-section .language {
-    font-size: 4vw;
+.about-section .language-skill {
+    font-size: calc(4vw + 3px);
     border: 2px solid var(--text-color2);
     border-radius: 10px;
     padding: 7px;
     position: relative;
 }
 
-.about-section .language-hovered {
+.about-section .about-hovered {
     content: "";
     background-color: transparent;
-    color: black;
+    color: #111;
     font-family: "League Spartan", sans-serif;
     text-align: center;
     font-size: calc(30% + 2px);
@@ -315,11 +315,14 @@ body {
     top: 0;
     left: 0;
     position: absolute;
-    z-index: 7;
     display: none;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+}
+
+#cli:hover, #cpp:hover {
+    color: #5390cc;
 }
 
 .projects-section {

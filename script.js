@@ -4,7 +4,8 @@ const navbarProjects = document.getElementById("nav-projects");
 const homeSection = document.getElementById("home-section");
 const aboutSection = document.getElementById("about-section");
 const projectsSection = document.getElementById("projects-section");
-const languages = document.getElementsByClassName("language");
+const languagesAndSkills = document.getElementsByClassName("language-skill");
+
 
 
 /* Highlighting currently open section of webpage on the navbar */
@@ -123,15 +124,15 @@ window.addEventListener("scroll", () => {
 });
 
 // iterating through languages and adding hover checks for each
-for (const language of languages) {
-    let hover = document.getElementById(`${language.id}-hover`);
+for (const element of languagesAndSkills) {
+    let hover = document.getElementById(`${element.id}-hover`);
 
-    language.addEventListener("mouseover", () => {
-        language.classList.add("colored");
+    element.addEventListener("mouseover", () => {
+        element.classList.add("colored");
         hover.style.display = "flex";
     });
-    language.addEventListener("mouseout", () => {
-        language.classList.remove("colored");
+    element.addEventListener("mouseout", () => {
+        element.classList.remove("colored");
         hover.style.display = "none";
     })
 }
