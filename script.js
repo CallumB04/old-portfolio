@@ -1,3 +1,4 @@
+const navbar = document.getElementById("navbar");
 const navbarHome = document.getElementById("nav-home");
 const navbarAbout = document.getElementById("nav-about");
 const navbarProjects = document.getElementById("nav-projects");
@@ -5,7 +6,6 @@ const homeSection = document.getElementById("home-section");
 const aboutSection = document.getElementById("about-section");
 const projectsSection = document.getElementById("projects-section");
 const languagesAndSkills = document.getElementsByClassName("language-skill");
-
 
 
 /* Highlighting currently open section of webpage on the navbar */
@@ -16,6 +16,7 @@ navbarHome.addEventListener("click", () => {
     navbarProjects.classList.remove("selected");
     navbarHome.classList.remove("highlight");
     navbarHome.classList.add("selected");
+    navbar.classList.add("freeze");
 });
 // -- ABOUT --
 navbarAbout.addEventListener("click", () => {
@@ -23,6 +24,7 @@ navbarAbout.addEventListener("click", () => {
     navbarProjects.classList.remove("selected");
     navbarAbout.classList.remove("highlight");
     navbarAbout.classList.add("selected");
+    navbar.classList.add("freeze");
 });
 // -- PROJECTS --
 navbarProjects.addEventListener("click", () => {
@@ -30,7 +32,13 @@ navbarProjects.addEventListener("click", () => {
     navbarHome.classList.remove("selected");
     navbarProjects.classList.remove("highlight");
     navbarProjects.classList.add("selected");
+    navbar.classList.add("freeze");
 });
+
+// Allowing for navbar highlights to change again once scroll has finished
+window.addEventListener("scrollend", () => {
+    navbar.classList.remove("freeze");
+})
 
 
 /* Temporary highlights navbar options when hovered */
@@ -113,7 +121,8 @@ window.addEventListener("scroll", () => {
         [projectsSection, navbarProjects]
     ]) {
         // Checking if section is predominant on the viewport
-        if (isInFocus(section[0])) { 
+        // Navbar only updates if 'freeze' class is not currently present from navbar usage
+        if (isInFocus(section[0]) && !navbar.classList.contains("freeze")) { 
             updateNavbar(section[1]); // Update highlights on navbar
         }
         // Fading in elements when section is partially visible
