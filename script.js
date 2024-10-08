@@ -83,9 +83,9 @@ const isInFocus = (section) => {
     } return false;
 }
 
-// checks if section is 15% visible on the viewport
-const isPartiallyVisible = (section) => {
-    if (section.getBoundingClientRect().y < window.innerHeight * 0.85) {
+// checks if element is 10% visible on the viewport
+const isPartiallyVisible = (element) => {
+    if (element.getBoundingClientRect().y < window.innerHeight * 0.9) {
         return true;
     } return false;
 }
@@ -101,13 +101,11 @@ const updateNavbar = (section) => {
     section.classList.add("selected");
 }
 
-// when section is viewed for first time, fades in all elements of the section
-const fadeInChildren = (section) => {
-    
-    // Iterating through each child element of the section, adding animation
-    for (const child of section.children) {
-        child.classList.remove("start-faded-out");
-        child.classList.add("fade-in");
+// when element is viewed for first time, fades in
+const fadeInElement = (element) => {
+    if (element.classList.contains("start-faded-out")){
+        element.classList.remove("start-faded-out");
+        element.classList.add("fade-in");
     }
 }
 
@@ -125,9 +123,23 @@ window.addEventListener("scroll", () => {
         if (isInFocus(section[0]) && !navbar.classList.contains("freeze")) { 
             updateNavbar(section[1]); // Update highlights on navbar
         }
-        // Fading in elements when section is partially visible
-        if (isPartiallyVisible(section[0]) && section[0] != homeSection) {
-            fadeInChildren(section[0]); // Add animation to children of section
+        // Fading in elements when partially visible
+        if (section[0] != homeSection){
+            for (const child of section[0].children){
+                if (isPartiallyVisible(child)) {
+                    fadeInElement(child); // Fade in element
+                }
+                for (const secondChild of child.children) {
+                    if (isPartiallyVisible(secondChild)) {
+                        fadeInElement(secondChild); // Fade in second children
+                    }
+                    for (const thirdChild of secondChild.children) {
+                        if (isPartiallyVisible(thirdChild)) {
+                            fadeInElement(thirdChild); // Fade in third children
+                        }
+                    }
+                }
+            }
         }
     }
 });
