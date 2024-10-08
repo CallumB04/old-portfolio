@@ -334,6 +334,37 @@ body {
     height: 1000px;
 }
 
+.projects-section h2 {
+    font-size: calc(5vw + 5px);
+    color: var(--text-color1);
+    text-align: center;
+    padding-top: 40px;
+}
+
+.projects-section #projects-timeline {
+    padding: 40px 0;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    column-gap: 2.5%;
+}
+
+.projects-section .projects-split {
+    border: 1px solid var(--text-color1);
+
+    width: 45%;
+    height: 100%;
+}
+
+.projects-section #timeline-divider {
+    width: 1px;
+    height: 100%;
+    background-color: var(--text-color1);
+}
+
 @media (max-aspect-ratio: 39/64) {
     .home-section-image-div {
         margin-top: 20%;
