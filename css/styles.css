@@ -160,6 +160,8 @@ body {
 
 .home-section-socials-div .socials:hover {
     cursor: pointer;
+    scale: 1.2;
+    transition: scale 0.1s;
 }
 
 .home-section .cv-button {
@@ -177,6 +179,11 @@ body {
     font-family: Lato;
     border: 2px solid var(--highlight-color);
     border-radius: 30px;
+}
+
+.home-section .cv-button:hover {
+    scale: 1.1;
+    transition: scale 0.1s;
 }
 
 .home-section .cv-button::before {
@@ -203,7 +210,6 @@ body {
 
 .home-section .cv-button:hover {
     cursor: pointer;
-    background-color: #474747c2;
 }
 
 @media (max-width: 869px) {
@@ -255,6 +261,11 @@ body {
     border-radius: 10px;
     padding: 7px;
     position: relative;
+}
+
+.about-section .language-skill:hover {
+    scale: 1.1;
+    transition: scale 0.1s;
 }
 
 .about-section .about-hovered {
