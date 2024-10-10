@@ -1,0 +1,32 @@
+@keyframes fade-in-highlight {
+    from {
+        background-color: var(--background-color2-2-faded);
+    }
+    to {
+        background-color: var(--background-color2-2);
+    }
+}
+
+@keyframes fade-in-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@property --angle {
+    syntax : "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes home-image-spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
