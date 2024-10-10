@@ -524,17 +524,4 @@ body {
     .projects-section #project-snakeSFML::after {
         content: "Sep 2020";
     }
-
-    .projects-section #project-portfolioWebsite .project-image-div {
-        background-size: 44.5vw;
-    }
-    .projects-section #project-platformShooter .project-image-div {
-        background-size: 42vw;
-    }
-    .projects-section #project-autoMate .project-image-div {
-        background-size: 33.5vw;
-    }
-    .projects-section #project-snakeSFML .project-image-div {
-        background-size: 33vw;
-    }
 }
