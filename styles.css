@@ -367,7 +367,7 @@ body {
 
 .projects-section .project {
     border: 1px solid var(--text-color1);
-    border-radius: 20px;
+    border-radius: 15px;
 
     width: 100%;
     aspect-ratio: 6/5;
@@ -429,7 +429,7 @@ body {
     height: 20%;
     padding-top: 1vw;
     color: var(--text-color1);
-    border-radius: 20px 20px 0 0;
+    border-radius: 15px 15px 0 0;
     background-image: linear-gradient(to bottom right, #303030, var(--background-color1-2));
 }
 
@@ -440,7 +440,7 @@ body {
     top: 0;
     margin-top: 14%;
     background-position: top;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 15px 15px;
     border-top: 1px solid var(--text-color1);
 }
 
