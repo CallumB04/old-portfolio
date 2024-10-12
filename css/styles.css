@@ -288,8 +288,12 @@ body {
     border-radius: 8px;
 }
 
-#cli:hover, #cpp:hover {
+#cpp:hover {
     color: #5390cc;
+}
+
+#linux:hover {
+    color: #555;
 }
 
 .projects-section {
