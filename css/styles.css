@@ -286,6 +286,9 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 #cpp:hover {
