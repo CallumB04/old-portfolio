@@ -335,6 +335,10 @@ body {
     background-color: var(--text-color1);
 }
 
+.projects-section #timeline-divider-mobile {
+    display: none;
+}
+
 .projects-section .project {
     border: 1px solid var(--text-color1);
     border-radius: 15px;
