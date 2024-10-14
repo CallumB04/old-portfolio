@@ -66,8 +66,13 @@
     .projects-section .left::after, .projects-section .right::after {
         width: 14%;
         font-size: 1.4vw;
-        left: calc(-8vw - 22px);
+        left: calc(-8.5vw - 21px);
         padding-top: 3px;
+        padding-left: 3px;
+    }
+    .projects-section .right::after {
+        padding-left: 2px;
+        padding-right: 2px;
     }
     .projects-section #project-portfolioWebsite::after {
         content: "Oct 2024";
