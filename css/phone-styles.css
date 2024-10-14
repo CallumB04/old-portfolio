@@ -44,20 +44,29 @@
     .about-section .language-skill {
         font-size: 9vw;
     }
-
     .projects-section .projects-split {
-        width: 45%;
+        row-gap: calc(70vw * 5/6);
     }
-    .projects-section .left::after {
+    .projects-section #timeline-divider {
+        display: none;
+    }
+    .projects-section #timeline-divider-mobile {
+        display: block;
+        width: 1px;
+        background-color: var(--text-color1);
+    }
+    .projects-section .project {
+        width: 200%;
+        margin-left: 20px;
+    }
+    .projects-section .right {
+        position: relative;
+        right: 128.5%;
+    }
+    .projects-section .left::after, .projects-section .right::after {
         width: 14%;
         font-size: 1.4vw;
-        right: calc(-25.5% - 2px);
-        padding-top: 3px;
-    }
-    .projects-section .right::after {
-        width: 14%;
-        font-size: 1.4vw;
-        left: calc(-25.5% - 2px);
+        left: calc(-8vw - 22px);
         padding-top: 3px;
     }
     .projects-section #project-portfolioWebsite::after {
@@ -71,5 +80,13 @@
     }
     .projects-section #project-snakeSFML::after {
         content: "Sep 2020";
+    }
+    .projects-section #projects-split-right {
+        padding-top: calc(66vw * 5/6);
+        position: relative;
+    }
+    .projects-section .project-header {
+        padding-top: 2.5vw;
+        font-size: calc(3.5vw + 2px);
     }
 }
