@@ -376,6 +376,9 @@ body {
     padding-left: 2px;
 }
 
+.projects-section #project-russWebsite::after {
+    content: "October 2024";
+}
 .projects-section #project-portfolioWebsite::after {
     content: "October 2024";
 }

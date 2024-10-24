@@ -83,6 +83,9 @@
         padding-left: 5px;
         padding-right: 2px;
     }
+    .projects-section #project-russWebsite::after {
+        content: "2024";
+    }
     .projects-section #project-portfolioWebsite::after {
         content: "2024";
     }
@@ -94,6 +97,9 @@
     }
     .projects-section #project-snakeSFML::after {
         content: "2020";
+    }
+    .projects-section #project-russWebsite::before {
+        content: "Oct";
     }
     .projects-section #project-portfolioWebsite::before {
         content: "Oct";
