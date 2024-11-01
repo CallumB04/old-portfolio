@@ -175,30 +175,71 @@ const projects = [
         name: "russWebsite",
         title: "russthetechguy.co.uk",
         repo_name: "russthetechguy.co.uk",
-        img_file: "russ-website.png"
+        img_file: "russ-website.png",
+        date: "October 2024"
     },
     {
         name: "portfolioWebsite",
         title: "Portfolio Website",
         repo_name: "callumb04.github.io",
-        img_file: "portfolio-website.png"
+        img_file: "portfolio-website.png",
+        date: "October 2024"
     },
     {
         name: "platformShooter",
         title: "Platform Shooter",
         repo_name: "platform-shooter",
-        img_file: "platform-shooter.png"
+        img_file: "platform-shooter.png",
+        date: "August 2024"
     },
     {
         name: "autoMate",
         title: "Auto-Mate",
         repo_name: "auto-mate",
-        img_file: "auto-mate.png"
+        img_file: "auto-mate.png",
+        date: "May 2022"
     },
     {
         name: "snakeSFML",
         title: "Snake SFML",
         repo_name: "Snake-SFML",
-        img_file: "snake.png"
+        img_file: "snake.png",
+        date: "September 2020"
     }
 ];
+
+const loadProjects = () => {
+
+    // Adding structure for timeline
+    timeline.innerHTML += `
+    <div id="timeline-divider-mobile"></div>
+
+    <div class="projects-split" id="projects-split-left">
+
+    </div>
+    
+    <div id="timeline-divider"></div>
+    
+    <div class="projects-split" id="projects-split-right">
+
+    </div>`;
+
+    const leftProjects = document.getElementById("projects-split-left");
+    const rightProjects = document.getElementById("projects-split-right");
+
+    // Iterating through projects
+    for (let i = 0; i < projects.length; i++) {
+
+        // Array index is even, project goes on left
+        if (i % 2 === 0) {
+            leftProjects.innerHTML += `
+
+            `;
+        }
+
+        // Array index is odd, project goes on right
+        else {
+
+        }
+    }
+};
