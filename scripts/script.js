@@ -157,3 +157,48 @@ for (const element of languagesAndSkills) {
         hover.style.display = "none";
     })
 }
+
+/* Add projects on page load */
+
+// projects timeline div
+const timeline = document.getElementById("projects-timeline");
+
+// array of objects for project information
+//
+// name         -> id name for project
+// title        -> display name on website
+// repo_name    -> name of github repository
+// img_file     -> file path for project image
+//
+const projects = [
+    {
+        name: "russWebsite",
+        title: "russthetechguy.co.uk",
+        repo_name: "russthetechguy.co.uk",
+        img_file: "russ-website.png"
+    },
+    {
+        name: "portfolioWebsite",
+        title: "Portfolio Website",
+        repo_name: "callumb04.github.io",
+        img_file: "portfolio-website.png"
+    },
+    {
+        name: "platformShooter",
+        title: "Platform Shooter",
+        repo_name: "platform-shooter",
+        img_file: "platform-shooter.png"
+    },
+    {
+        name: "autoMate",
+        title: "Auto-Mate",
+        repo_name: "auto-mate",
+        img_file: "auto-mate.png"
+    },
+    {
+        name: "snakeSFML",
+        title: "Snake SFML",
+        repo_name: "Snake-SFML",
+        img_file: "snake.png"
+    }
+];
