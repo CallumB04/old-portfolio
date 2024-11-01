@@ -230,16 +230,17 @@ const loadProjects = () => {
     // Iterating through projects
     for (let i = 0; i < projects.length; i++) {
 
-        // Array index is even, project goes on left
-        if (i % 2 === 0) {
-            leftProjects.innerHTML += `
-
+        // Creating HTML for the project
+        let projectHTML = `
+                <div id="project-${projects[i].name}" class="project ${i % 2 === 0 ? "left" : "right"} start-faded-out">
+                    <h3 class="project-header">${projects[i].title}</h3>
+                    <a href="https://github.com/CallumB04/${projects[i].repo_name}" target="_blank">
+                        <div class="project-image-div"><img src="assets/project-images/${projects[i].img_file}" class="project-image"/></div>
+                    </a>
+                </div>
             `;
-        }
 
-        // Array index is odd, project goes on right
-        else {
-
-        }
+        // Adding projects to left or right div, depending on index number
+        i % 2 == 0 ? leftProjects.innerHTML += projectHTML : rightProjects.innerHTML += projectHTML;
     }
 };
