@@ -212,17 +212,18 @@ const loadProjects = () => {
 
     // Adding structure for timeline
     timeline.innerHTML += `
-    <div id="timeline-divider-mobile"></div>
+        <div id="timeline-divider-mobile"></div>
 
-    <div class="projects-split" id="projects-split-left">
+        <div class="projects-split" id="projects-split-left">
 
-    </div>
-    
-    <div id="timeline-divider"></div>
-    
-    <div class="projects-split" id="projects-split-right">
+        </div>
+        
+        <div id="timeline-divider"></div>
+        
+        <div class="projects-split" id="projects-split-right">
 
-    </div>`;
+        </div>
+    `;
 
     const leftProjects = document.getElementById("projects-split-left");
     const rightProjects = document.getElementById("projects-split-right");
@@ -232,13 +233,13 @@ const loadProjects = () => {
 
         // Creating HTML for the project
         let projectHTML = `
-                <div id="project-${projects[i].name}" class="project ${i % 2 === 0 ? "left" : "right"} start-faded-out">
-                    <h3 class="project-header">${projects[i].title}</h3>
-                    <a href="https://github.com/CallumB04/${projects[i].repo_name}" target="_blank">
-                        <div class="project-image-div"><img src="assets/project-images/${projects[i].img_file}" class="project-image"/></div>
-                    </a>
-                </div>
-            `;
+            <div id="project-${projects[i].name}" class="project ${i % 2 === 0 ? "left" : "right"} start-faded-out">
+                <h3 class="project-header">${projects[i].title}</h3>
+                <a href="https://github.com/CallumB04/${projects[i].repo_name}" target="_blank">
+                    <div class="project-image-div"><img src="assets/project-images/${projects[i].img_file}" class="project-image"/></div>
+                </a>
+            </div>
+        `;
 
         // Adding projects to left or right div, depending on index number
         i % 2 == 0 ? leftProjects.innerHTML += projectHTML : rightProjects.innerHTML += projectHTML;
