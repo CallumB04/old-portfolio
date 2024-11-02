@@ -376,22 +376,6 @@ body {
     padding-left: 2px;
 }
 
-.projects-section #project-russWebsite::after {
-    content: "October 2024";
-}
-.projects-section #project-portfolioWebsite::after {
-    content: "October 2024";
-}
-.projects-section #project-platformShooter::after {
-    content: "August 2024";
-}
-.projects-section #project-autoMate::after {
-    content: "May 2022";
-}
-.projects-section #project-snakeSFML::after {
-    content: "September 2020";
-}
-
 .projects-section #projects-split-left {
     padding-top: calc(2vw * 5/6)
 }

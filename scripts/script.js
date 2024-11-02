@@ -157,3 +157,125 @@ for (const element of languagesAndSkills) {
         hover.style.display = "none";
     })
 }
+
+/* Add projects on page load */
+
+// projects timeline div
+const timeline = document.getElementById("projects-timeline");
+
+// array of objects for project information
+//
+// name         -> id name for project
+// title        -> display name on website
+// repo_name    -> name of github repository
+// img_file     -> file path for project image
+//
+const projects = [
+    {
+        name: "russWebsite",
+        title: "russthetechguy.co.uk",
+        repo_name: "russthetechguy.co.uk",
+        img_file: "russ-website.png",
+        date: "October 2024"
+    },
+    {
+        name: "portfolioWebsite",
+        title: "Portfolio Website",
+        repo_name: "callumb04.github.io",
+        img_file: "portfolio-website.png",
+        date: "October 2024"
+    },
+    {
+        name: "platformShooter",
+        title: "Platform Shooter",
+        repo_name: "platform-shooter",
+        img_file: "platform-shooter.png",
+        date: "August 2024"
+    },
+    {
+        name: "autoMate",
+        title: "Auto-Mate",
+        repo_name: "auto-mate",
+        img_file: "auto-mate.png",
+        date: "May 2022"
+    },
+    {
+        name: "snakeSFML",
+        title: "Snake SFML",
+        repo_name: "Snake-SFML",
+        img_file: "snake.png",
+        date: "September 2020"
+    }
+];
+
+const loadProjects = () => {
+
+    // Adding structure for timeline
+    timeline.innerHTML += `
+        <div id="timeline-divider-mobile"></div>
+
+        <div class="projects-split" id="projects-split-left">
+
+        </div>
+        
+        <div id="timeline-divider"></div>
+        
+        <div class="projects-split" id="projects-split-right">
+
+        </div>
+    `;
+
+    const leftProjects = document.getElementById("projects-split-left");
+    const rightProjects = document.getElementById("projects-split-right");
+
+    // Iterating through projects
+    for (let i = 0; i < projects.length; i++) {
+
+        // Creating HTML for the project
+        let projectHTML = `
+            <div id="project-${projects[i].name}" class="project ${i % 2 === 0 ? "left" : "right"} start-faded-out">
+                <h3 class="project-header">${projects[i].title}</h3>
+                <a href="https://github.com/CallumB04/${projects[i].repo_name}" target="_blank">
+                    <div class="project-image-div"><img src="assets/project-images/${projects[i].img_file}" class="project-image"/></div>
+                </a>
+            </div>
+        `;
+
+        // Adding projects to left or right div, depending on index number
+        i % 2 == 0 ? leftProjects.innerHTML += projectHTML : rightProjects.innerHTML += projectHTML;
+    }
+
+    /* Adding dates to the projects as pseudo elements */
+
+    // Array of pseudo elements for projects
+    const projectDatesCSS = projects.map(project => {
+        return `
+            .projects-section #project-${project.name}::after {
+                content: "${project.date}";
+            }
+        `
+    });
+
+    // Array of mobile specific pseudo elements for projects
+    const projectDatesMobileCSS = projects.map(project => {
+        return `
+            .projects-section #project-${project.name}::after {
+                content: "${project.date.split(" ")[1]}";
+            }
+            .projects-section #project-${project.name}::before {
+                content: "${project.date.split(" ")[0].slice(0, 3)}";
+            }
+        `
+    })
+
+    // Add pseudo element styling to the html
+    timeline.innerHTML += `
+        <style>
+            ${projectDatesCSS.reduce((acc, el) => acc + el, "")}
+
+            @media (max-aspect-ratio: 39/64) {
+                ${projectDatesMobileCSS.reduce((acc, el) => acc + el, "")}
+            }
+        </style>
+    `;
+};
