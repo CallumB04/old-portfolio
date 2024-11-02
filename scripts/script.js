@@ -244,4 +244,38 @@ const loadProjects = () => {
         // Adding projects to left or right div, depending on index number
         i % 2 == 0 ? leftProjects.innerHTML += projectHTML : rightProjects.innerHTML += projectHTML;
     }
+
+    /* Adding dates to the projects as pseudo elements */
+
+    // Array of pseudo elements for projects
+    const projectDatesCSS = projects.map(project => {
+        return `
+            .projects-section #project-${project.name}::after {
+                content: "${project.date}";
+            }
+        `
+    });
+
+    // Array of mobile specific pseudo elements for projects
+    const projectDatesMobileCSS = projects.map(project => {
+        return `
+            .projects-section #project-${project.name}::after {
+                content: "${project.date.split(" ")[1]}";
+            }
+            .projects-section #project-${project.name}::before {
+                content: "${project.date.split(" ")[0].slice(0, 3)}";
+            }
+        `
+    })
+
+    // Add pseudo element styling to the html
+    timeline.innerHTML += `
+        <style>
+            ${projectDatesCSS.reduce((acc, el) => acc + el, "")}
+
+            @media (max-aspect-ratio: 39/64) {
+                ${projectDatesMobileCSS.reduce((acc, el) => acc + el, "")}
+            }
+        </style>
+    `;
 };
