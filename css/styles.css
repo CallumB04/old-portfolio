@@ -291,7 +291,7 @@ body {
     user-select: none; /* Standard syntax */
 }
 
-#cpp:hover, #jquery:hover {
+#cpp:hover {
     color: #5390cc;
 }
 
