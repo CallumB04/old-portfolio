@@ -169,8 +169,16 @@ const timeline = document.getElementById("projects-timeline");
 // title        -> display name on website
 // repo_name    -> name of github repository
 // img_file     -> file path for project image
+// date         -> month and year project was started
 //
 const projects = [
+    {
+        name: "reactTodolist",
+        title: "Todolist App",
+        repo_name: "react-todolist",
+        img_file: "react-todolist.png",
+        date: "November 2024"
+    },
     {
         name: "russWebsite",
         title: "russthetechguy.co.uk",
