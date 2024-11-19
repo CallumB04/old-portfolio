@@ -299,6 +299,34 @@ body {
     color: #555;
 }
 
+.language-skill.non-devicon-skill {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(4vw + 3px);
+    border: 2px solid var(--text-color2);
+    border-radius: 10px;
+    padding: 7px;
+    position: relative;
+    filter: grayscale(100%) brightness(60%) contrast(5);
+}
+
+.language-skill.non-devicon-skill .non-devicon-icon {
+    width: 1em; 
+    height: 1em; 
+    object-fit: contain; 
+}
+
+.language-skill.non-devicon-skill:hover {
+    filter: none
+}
+
+.language-skill.non-devicon-skill:hover .about-hovered {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 .projects-section {
     width: 100%;
     padding-bottom: 40px;
